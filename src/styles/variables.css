@@ -1,0 +1,31 @@
+:root {
+  /* Colors */
+  --color-primary: #CC9933;
+  --color-accent: #FFA500;
+  --color-background: #f8f8f8;
+  --color-text-dark: #333;
+  --color-text-light: #666;
+  --color-white: white;
+
+  /* Typography */
+  --font-primary: "futura-pt", sans-serif;
+  --font-secondary: 'Cormorant Garamond', serif;
+
+  /* Spacing */
+  --spacing-small: 0.5rem;
+  --spacing-medium: 1rem;
+  --spacing-large: 2rem;
+  --spacing-xlarge: 3rem;
+
+  /* Layout */
+  --container-width: 1200px;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  /* Button Styles */
+  --button-padding: 1rem;
+  --button-min-width: 160px;
+  --button-font-size: .75rem;
+  --button-radius: 4px;
+  --button-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
