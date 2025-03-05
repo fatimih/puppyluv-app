@@ -3,7 +3,7 @@ import React from 'react';
 import { sharedFeatures } from '../featuresData.jsx';
 import FeatureItem from '../components/FeatureItem';
 import FeatureGrid from '../components/FeatureGrid';
-import timaImg from '../assets/images/tima.jpg';
+import timaImg from '../assets/images/Tima.jpg';
 
 function Home() {
   const features = sharedFeatures;
