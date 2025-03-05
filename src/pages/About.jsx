@@ -1,7 +1,7 @@
 // src/pages/About.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import timaImg from '../assets/images/tima.jpg';
+import timaImg from '../assets/images/Tima.jpg';
 
 function About() {
   return (
