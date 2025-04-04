@@ -38,21 +38,23 @@ body {
 .page-wrapper {
   width: 100%;
   min-height: 100vh;
-  background-color: var(--color-background);
-  display: flex; /* Add this */
-  flex-direction: column; /* Add this */
-  position: absolute; /* Remove this line */
-  top: 0;            /* Remove this line */
-  overflow-y: auto;  /* Remove this line */
+  background-color: var(--color-background);  /* Update from #f8f8f8 */
+  position: absolute; /* This makes it take up full space regardless of content */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;  /* Add this line */
 }
 
 /* Ensure content container has correct width */
 .content-container {
   width: 100%;
-  max-width: 1200px;  /* Adjust based on your design */
+  max-width: 1200px;         /* Update from 1200px */
   margin: 0 auto;
-  padding: 0 2rem;  /* Add some padding for spacing */
-  box-sizing: border-box;
+  padding: 0 var(--spacing-large);           /* Update from 2rem */
+  position: relative; /* This helps contain the content */
+  overflow-x: visible; /* Change from hidden to visible if it exists */
 }
 
 
@@ -167,7 +169,7 @@ nav ul li a:hover {
 .mobile-menu ul {
   list-style: none;
   padding: 0;
-  margin: 8rem;
+  margin: 6rem;
   display: flex;
   flex-direction: column;  /* This makes the list vertical */
   align-items: center;     /* Centers items horizontally */
@@ -183,7 +185,7 @@ nav ul li a:hover {
 
 .mobile-menu ul li a {
   color: var(--color-primary);
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-decoration: none;
   display: block;         /* Makes entire area clickable */
   padding: 0 rem 0;        /* Adds vertical padding */
@@ -196,7 +198,7 @@ nav ul li a:hover {
 
 .mobile-social-icons {
   position: absolute;
-  bottom: 2rem;
+  bottom: 6rem;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -353,6 +355,7 @@ nav ul li a:hover {
 }
 
 
+
 /* Feature Grid: Horizontal scrolling layout for Home page */
 .feature-grid {
   width: 100%;
@@ -365,7 +368,6 @@ nav ul li a:hover {
   -webkit-overflow-scrolling: touch;
   position: relative;
   scroll-behavior: smooth;
-  margin-bottom: 0 !important; /* Remove bottom margin from grid */
 }
 
 /* Circular scroll indicators */
@@ -536,6 +538,7 @@ nav ul li a:hover {
   font-weight: 300; /* Medium font weight */
   font-size: 1.5rem; /* Font size for titles */
   text-align: center; /* Center-align text */
+ 
 }
 
 .feature-item h4 {
@@ -606,40 +609,88 @@ nav ul li a:hover {
   margin-top: var(--spacing-small);          /* Update from 0.5rem */
 }
 
-/* Add spacing between services and about section on home page */
-.features + .features {  /* This targets the second features section (about) that follows another features section */
-  margin-top: 0;  /* Adds space above the about section */
-}
-
-.features .about-grid .home-about-item {
-  min-width: 600px;  /* Wider than standard feature items */
-  width: 75%;        /* Takes up more space */
-  margin: 0 auto;    /* Centers the feature box */
-  padding: 2rem 4rem;  /* More padding on the sides */
-  margin-top: 0;
-  margin-bottom: 2rem;
-}
-
-/* Add this to the "Feature item states and colors" section of your CSS */
-.home-about-item {
-  background: var(--color-white) !important;
-  color: var(--color-primary) !important;
-}
-
-.home-about-item h3,
-.home-about-item p {
-  color: var(--color-primary);
-}
-
-/* Style the "more info" button specifically for this section */
-.home-about-item .book-btn {
+.more-info-hero-btn {
+  min-width: var(--button-min-width);
+  width: 25%;
+  align-self: center;
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  font-weight: 200;
+  padding: var(--button-padding);
   background-color: var(--color-primary);
   color: var(--color-white);
+  border: none;
+  border-radius: var(--button-radius);
+  cursor: pointer;
+  box-shadow: var(--button-shadow);
+  transition: all 0.3s ease;
+  margin-bottom: 0;
 }
 
-.home-about-item .book-btn:hover {
-  background-color: var(--color-accent);
-  color: var(--color-white);
+.more-info-hero-btn:hover {
+  color: var(--color-accent);
+  background-color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+
+/* Review section styling */
+.review-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem; /* Space between icons */
+  margin: .2rem 0 3rem 0;
+}
+
+.review-link {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.review-link:hover {
+  transform: translateY(-5px);
+}
+
+/* Yelp icon with hover effect */
+.yelp-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url('../assets/icons/yelp.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.3s ease;
+}
+
+.yelp-icon:hover {
+  background-image: url('../assets/icons/yelphover.svg');
+}
+
+/* Google icon with hover effect */
+.google-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url('../assets/icons/google.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.3s ease;
+}
+
+.google-icon:hover {
+  background-image: url('../assets/icons/googlehover.svg');
+}
+
+.home-about-image {  /* Add this new block here */
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-large);
 }
 
 
@@ -650,7 +701,7 @@ nav ul li a:hover {
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--spacing-large);                 /* Update from 2rem */
-  padding: 0.75rem;
+  padding: 0.85rem;
   width: 55%;
   flex-direction: center;
   margin-bottom: 2rem;
@@ -671,9 +722,12 @@ nav ul li a:hover {
 
 /* Add specific styling for paragraphs within service items */
 .features .services-grid .feature-item p {
+  font-size: 1rem;
   color: var(--color-accent);
   margin-bottom: var(--spacing-medium);
+  padding: .5rem 1.8rem; /* Add padding to the paragraph */
 }
+
 
 .service-image {
   width: 100%;
@@ -763,18 +817,34 @@ nav ul li a:hover {
 }
 
 /* Contact and About Grids */
-
-
 .about-image {  /* Add this new block here */
   width: 100%;
-  height: 250px;
+  height: 350px;
   object-fit: cover;
   border-radius: var(--border-radius);
-  margin-bottom: var(--spacing-medium);
+  margin-bottom: var(--spacing-large);
 }
 
-.contact-grid,
+.about-about-image {  /* Add this new block here */
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-large);
+}
+
 .about-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-large);               /* Update from 2rem */
+  padding: none;
+  width: 55%; 
+  margin-bottom: 0;
+}
+
+
+.contact-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -784,19 +854,53 @@ nav ul li a:hover {
   margin-bottom: 2rem;
 }
 
-
-.contact-grid .feature-item,
 .about-grid .feature-item {
+  flex: 0 1 calc(50% - 2rem);
+  min-width: 600px;
+  min-height: 300px;
+  padding: 2rem 00 2.5rem;
+  margin: 0;
+  color: var(--color-primary) !important;    /* Update from white */
+  background: transparent;         /* Update from #FFA500 */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
+.about-grid .feature-item h3 {
+  font-family: var(--font-secondary);          /* Update from "futura-pt", sans-serif */
+  font-weight: 300; /* Medium font weight */
+  font-size: 1.8rem; /* Font size for titles */
+  text-align: center; /* Center text */
+}
+
+
+
+.about-grid .feature-item p {
+  font-family: var(--font-secondary);          /* Update from "futura-pt", sans-serif */
+  font-weight: 300; /* Medium font weight */
+  font-size: 1.5rem; /* Font size for titles */
+  text-align: center; /* Center text */
+}
+
+.about-grid .feature-item h4 {
+  font-family: var(--font-primary);          /* Update from "futura-pt", sans-serif */
+  font-weight: 200;
+  color: var(--color-accent);
+  font-size: clamp(.75rem, 0.85vw, 0.8rem);  /* Starting with a smaller size than h3 */
+  text-align: center;
+  margin-top: var(--spacing-medium);         /* Update from 1rem */
+}
+
+
+.contact-grid .feature-item {
   flex: 0 1 calc(50% - 2rem);
   min-width: 600px;
   min-height: 300px;
   padding: 2rem 2.5rem;
   margin: 0;
-  color: var(--color-white) !important;    /* Update from white */
-  background: var(--color-primary);         /* Update from #FFA500 */
-  border-radius: var(--border-radius);     /* Update from 8px */
-  box-shadow: var(--box-shadow) !important; /* Update shadow */
-  transition: all 0.3s ease;
+  color: var(--color-primary) !important;    /* Update from white */
+  background: transparent;         /* Update from #FFA500 */
   word-wrap: break-word;
   overflow-wrap: break-word;
   box-sizing: border-box;
@@ -807,18 +911,18 @@ nav ul li a:hover {
 /* Form Container */
 .form-container {
   width: 55%;
-  min-width: 600px;       /* Update from 1200px */
+  max-width: 1200px;       /* Update from 1200px */
   margin: none;
   margin-bottom: 2.5rem;
 }
 
 .contact-form {
-  max-width: 1600px;
+  max-width: 600px;
   margin: 0 auto;
   padding: var(--spacing-large);           /* Update from 2rem */
   background-color: var(--color-white);    /* Update from white */
   border-radius: var(--border-radius);     /* Update from 8px */
-  box-shadow: var(--box-shadow);           /* Update shadow */
+  box-shadow: var(--box-shadow);          /* Update shadow */
 }
 
 .contact-form-message {
@@ -920,6 +1024,7 @@ nav ul li a:hover {
   padding: var(--spacing-small);           /* Update from 0.5rem */
   text-align: center;  /* Center the dropdown options */
 }
+
 
 /* Style for when an option is selected */
 .form-group select:focus option:checked {
@@ -1057,6 +1162,51 @@ nav ul li a:hover {
 
 /* Small screens */
 @media (max-width: 600px) {
+  /* Ensure content container is properly sized */
+  .content-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 1rem !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Fix hero section to be properly centered */
+  .hero {
+    width: 75% !important;
+    margin: 0 auto !important;
+    padding: 1rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero h2 {
+    font-family: var(--font-primary);          /* Update from "futura-pt", sans-serif */
+    font-weight: 300;
+    font-size: clamp(.65rem, .85vw, 2rem);  /* Keep dynamic font size */
+    color: var(--color-accent);                /* Update from #FFA500 */
+    margin-bottom: var(--spacing-medium);       /* Update from 1rem */
+    line-height: 1.2;     /* Add this */
+    margin-top: 0;        /* Add this */
+  }
+
+  .full-width-feature-grid .features h2 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero .video-container {
+    margin-top: 1rem !important;
+  }
+  
+  /* Ensure page-content maintains proper width */
+  .page-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Navigation for mobile */
   nav ul.desktop-nav {
     display: none;
   }
@@ -1073,6 +1223,47 @@ nav ul li a:hover {
     display: block;
   }
 
+  /* Fix feature grid items that are being cut off */
+  .feature-grid {
+    flex-wrap: wrap !important;
+    gap: var(--spacing-small);
+    justify-content: center;
+    overflow-x: visible;
+    width: 100%;
+    min-width: unset !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 1rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .feature-grid > a
+  .feature-grid > * {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+    margin-bottom: 1rem !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Make sure feature item content is fully visible */
+  .feature-item,
+  .feature-item-content {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+    padding: .5rem 0 0 !important;
+    box-sizing: border-box !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  
+  .scroll-indicator {
+    display: none;
+  }
+  
+  /* Grid containers */
   .full-width-feature-grid-wrapper {
     width: 100% !important;
     margin: 0 auto !important;
@@ -1090,118 +1281,320 @@ nav ul li a:hover {
     margin-bottom: 0 !important;
   }
 
-  .feature-grid {
-    flex-wrap: wrap !important;
-    gap: var(--spacing-medium);
-    justify-content: center;
-    overflow-x: visible;
-    width: 100%;
-    min-width: 350;
-    max-width: 600px;
-    margin: 0 auto !important;
-    margin-bottom: 0 !important;
-  }
+/* Make sure feature items have consistent width */
+.services-grid .feature-item,
+.about-grid .feature-item,
+.contact-grid .feature-item,
+.features .services-grid .feature-item,
+.features .about-grid .feature-item,
+.features .contact-grid .feature-item{
+  width: 100% !important;
+  min-width: 350;
+  max-width: 600px;
+  box-sizing: border-box !important;
+  margin: 0 0 1.5rem 0 !important;
+  padding: 1.3rem !important;
+}
   
-  .feature-grid > a {
-    flex: 0 0 100% !important;
+  /* Fix features container */
+  .features {
     width: 100% !important;
-    margin-bottom: 0 !important;
-  }
-  
-  .scroll-indicator {
-    display: none;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
   }
 
-  .features .services-grid,
-  .features .about-grid,
-  .features .contact-grid {
+  .review-links {
+    gap: 1rem;
+  }
+  
+  .yelp-icon,
+  .google-icon {
+    width: 25px;
+    height: 25px;
+  }
+  
+  /* Target divs inside features that might be constraining width */
+  .features > div {
     width: 100% !important;
-    min-width: 350;
-    max-width: 600px;
+    max-width: 100% !important;
+    min-width: unset !important;
+    box-sizing: border-box !important;
+  }
+  
+  
+  /* Form element widths */
+  .form-group.short-input input,
+  .form-group select {
+    width: 80% !important;
+    min-width: unset !important;
+  }
+  
+  .form-group.message textarea {
+    width: 90% !important;
+    min-width: unset !important;
+  }
+  
+  
+  /* Video container */
+  .features .video-container .hero {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
     margin: 0 auto !important;
     margin-bottom: 1.5rem !important;
+  }
+
+
+/* Ensure feature items inside grids take full width */
+.services-grid .feature-item,
+.feature-grid .feature-item,
+.contact-grid .feature-item,
+.features .services-grid .feature-item,
+.features .about-grid .feature-item,
+.features .contact-grid .feature-item {
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 0 1.5rem 0 !important;
+  padding: 1.5rem
+}
+
+
+.page-content .features h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;;
+ }
+
+ .about-image {  /* Add this new block here */
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-large);
+}
+
+.home-about-image {  /* Add this new block here */
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-large);
+  margin-top: -1rem;
+}
+
+
+
+
+/* Make contact form 100% width */
+.contact-form {
+  width: 90% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 1.5rem !important;
+}
+
+
+/* Add subtle visual cue that fields are editable */
+.contact-form .form-group input,
+.contact-form .form-group textarea,
+.contact-form .form-group select {
+  -webkit-text-fill-color: var(--color-text-dark);
+ 
+}
+
+
+
+/* Improve contrast for select dropdowns */
+.contact-form select {
+  color: #333 !important;
+  background-color: #fff !important;
+}
+
+
+/* Fix for date input field appearance on mobile */
+.contact-form input[type="date"] {
+  display: block !important;
+  width: 80% !important;
+  height: 40px !important;
+  text-align: center !important;
+  appearance: textfield !important; /* Show mm/dd/yyyy format */
+  -webkit-appearance: textfield !important;
+  position: relative;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  padding-right: 30px !important;
+}
+
+/* Make sure date inputs get proper calendar icon */
+input[id="specificStartDate"],
+input[id="specificEndDate"] {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Create placeholder effect for date inputs before value is selected */
+.contact-form input[type="date"]:not(:valid):before {
+  content: "MM/DD/YYYY";
+  color: #999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
   
+  /* Clean up redundant date input styling */
+  .contact-form input[type="date"] {
+    /* Reset to desktop styling */
+    text-align: center !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    width: 40% !important;
+    min-width: 160px !important;
+    padding: .75rem !important;
+    background-position: center right 10px !important;
+    color: #333 !important;
   }
 
-  .features .services-grid .feature-item,
-  .features .about-grid .feature-item,
-  .features .contact-grid .feature-item,
-  .features .form-container {
-    width: 100% !important;
-    min-width: 380px !important;
-    padding: 2rem !important;
-    margin: 0 auto !important;
-  }
+
+
 }
 
-.features .about-grid .home-about-item {
-  margin-bottom: 1.5rem;
-}
-
- /* Tablet and below */
+/* Tablet and below */
 @media (max-width: 768px) {
-  .features {
-    width: 100%;
-    padding: 0.75rem;
-    margin-bottom: 1rem !important;
-  }
-  
-  .full-width-feature-grid-wrapper,
-  .full-width-feature-grid {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0;
-    position: static;
-    margin-bottom: 0 !important;
+
+  /* Ensure mobile navigation appears */
+  .mobile-nav {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between; /* Keeps logo and menu aligned properly */
+    padding: 1rem 2rem; /* Adjust padding if needed */
   }
 
+  /* Show the menu button */
+  .mobile-menu-button {
+    display: block !important;
+  }
+
+  /* Hide the desktop navigation */
+  nav ul.desktop-nav {
+    display: none !important;
+  }
+
+  /* Ensure mobile navigation menu structure */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-white);
+    z-index: 1999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* When menu is active (open) */
+  .mobile-menu.open {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Ensure page wrapper and content don't shrink */
+  .page-wrapper, .content-container {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Ensure the feature grid stays properly aligned */
   .feature-grid {
     display: flex;
     flex-wrap: wrap;
     gap: var(--spacing-medium);
     justify-content: center;
-    overflow-x: visible;
     width: 100%;
     max-width: 600px;
     margin: 1rem auto;
     padding: 0;
-    padding-bottom: 0 !important; /* Exactly 1rem padding at the bottom */
   }
-  
+
   .feature-grid > * {
     flex: 0 0 100%;
-    /* Remove or adjust the min-width to allow items to resize */
     width: 100%;
     margin-bottom: 1rem;
   }
 
+  /* Remove scroll indicators */
   .scroll-indicator-circle {
-    display: none; /* Hide on smaller screens where items stack */
+    display: none;
   }
 
-  
-  .services-grid .feature-item,
-  .about-grid .feature-item,
-  .contact-grid .feature-item,
+  /* Ensure form and grid layouts are correct */
+  .services-grid, .about-grid, .contact-grid {
+    width: 90%;
+    max-width: 700px;
+    gap: var(--spacing-small);
+    margin-bottom: 0;
+  }
+
   .form-container {
-    width: 100%;
-    padding: 2.5rem;
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
   }
+
+  .about-about-image {  /* Add this new block here */
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-large);
+    margin-top: -1rem;
+  }
+ 
+  
 }
 
+/* Large screens */
+/* Fix for larger screens - add at the very end of the file */
+@media (min-width: 769px) {
 
-/* Larger screens */
-@media (max-width: 1199px) {
+  /* Feature grid */
   .feature-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     gap: var(--spacing-medium);
-    padding-bottom: 1rem !important; /* Force exactly 1rem padding on all screens */
-  }
-
-  .features {
-    margin-bottom: 1rem !important; /* Force consistent 1rem spacing */
   }
   
-  .feature-item {
-    flex: 0 0 clamp(175px, 20vw, 225px);
+  .feature-grid > * {
+    flex: 0 0 350px;
+    min-width: 350px;
+    max-width: 350px;
+  }
+  
+  /* Ensure consistent widths for grids */
+  .services-grid, 
+  .about-grid,
+  .contact-grid,
+  .features .services-grid,
+  .features .about-grid,
+  .features .contact-grid {
+    width: 55%;
+    min-width: 600px;
+    max-width: 1200px;
   }
 }
+
+
+

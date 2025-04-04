@@ -6,6 +6,7 @@ function Contact() {
 
   return (
     <div className="page-content">
+
       {/* Hero Section */}
       <section className="hero">
         <h1>Get in touch with me!</h1>
@@ -20,12 +21,37 @@ function Contact() {
            <ContactForm />
         </div>
        </section>
-       <section className="features">
+       <section className="features"style={{ marginTop: '1.5rem'}}>
           <h2>Need an overview of my services?</h2>
           <Link to="/services">
-            <button className="hero-btn">view services</button>
+            <button className="hero-btn"style={{ marginBottom: '2rem' }}>view services</button>
           </Link>
         </section>
+
+                      {/* Reviews section */}
+      <section className="features reviews-section" style={{ marginTop: '2.5rem' }}>
+        <h2>Check out my reviews!</h2>
+        
+{/* Review platform icons */}
+<div className="review-links" style={{ marginBottom: '1.5rem' }}>
+  <a 
+    href="https://www.yelp.com" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="review-link"
+  >
+    <span className="yelp-icon" aria-label="Yelp Reviews"></span>
+  </a>
+  <a 
+    href="https://www.google.com" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="review-link"
+  >
+    <span className="google-icon" aria-label="Google Reviews"></span>
+  </a>
+</div>
+      </section>
       </div> 
   );
 }
