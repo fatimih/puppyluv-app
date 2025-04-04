@@ -137,7 +137,7 @@ function Home() {
 {/* Review platform icons */}
 <div className="review-links" style={{ marginBottom: '1.5rem' }}>
   <a 
-    href="https://www.yelp.com/biz/puppy-luv-san-diego?osq=puppy+luv&override_cta=Get+pricing+%26+availability" 
+    href="https://www.yelp.com/biz/puppy-luv-san-diego" 
     target="_blank" 
     rel="noopener noreferrer"
     className="review-link"
