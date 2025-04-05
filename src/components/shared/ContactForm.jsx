@@ -46,10 +46,26 @@ function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Here you would send the formData to your backend
-    // After sending, set the submitted flag to true
-    setSubmitted(true);
+    fetch('https://formspree.io/f/xrbpozga', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => {
+        if (response.ok) {
+          setSubmitted(true);
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error submitting form", error);
+        alert("There was an error. Please try again later.");
+      });
+    
     // Optionally, reset the formData if needed:
     setFormData({
       name: '',
@@ -73,7 +89,7 @@ function ContactForm() {
   if (submitted) {
     return (
       <div className="contact-form-message">
-        <p>Thank you! <p></p>I am reviewing your request and will be in touch shortly :)</p>
+        <p>Thank you! <p></p>I will be in touch shortly :)</p>
       </div>
     );
   }
