@@ -10,8 +10,8 @@ function Contact() {
       {/* Hero Section */}
       <section className="hero">
         <h1>Get in touch with me!</h1>
-        <p>Happy to discuss your pups needs</p>
-        <h2><b>*</b> <b>Every pup has their own needs</b> and you may not find exactly what you're looking for here. Contact me to <b>curate a service specific to your pup!</b>.</h2>
+        <p>Happy to discuss your pup's care...</p>
+        <h2><b>*</b> <b>...every dog is unique,</b> and you may not find exactly what you're looking for here. Contact me to <b>curate a service tailored to your pup!</b>.</h2>
       </section>
 
       {/* Content Section */}
@@ -30,7 +30,7 @@ function Contact() {
 
                       {/* Reviews section */}
       <section className="features reviews-section" style={{ marginTop: '2.5rem' }}>
-        <h2>Check out my reviews!</h2>
+        <h2>What the pack has to say?</h2>
         
 {/* Review platform icons */}
 <div className="review-links" style={{ marginBottom: '1.5rem' }}>

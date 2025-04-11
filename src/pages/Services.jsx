@@ -40,7 +40,7 @@ function Services() {
           <h1>What kind of Luv do you want for your pup?</h1> 
           <p>Don't find a package that quite fits?<br/>I'm happy to curate one to suit your pups individual needs!</p>
         
-            <h2><b>*</b> <b>Additional Services</b> also include: <b>Watering plants</b> / <b>Sweeping</b> & <b>moping</b> of your floors / Taking <b>trash</b> out / Collecting <b>mail</b> & <b>packages</b>.</h2>
+            <h2><b>*</b> <b>...additionally</b>, I can also: <b>Water</b> your <b>plants</b> / <b>Sweep</b> & <b>mop</b> your floors / Take out  your <b> trash</b> / Collect your <b>mail</b> & <b>packages</b>.</h2>
         </section>
    
         <section className="features">
@@ -77,7 +77,7 @@ function Services() {
 
                             {/* Reviews section */}
       <section className="features about-section" style={{ marginTop: '2.5rem' }}>
-        <h2>Check out my reviews!</h2>
+        <h2>What the pack has to say?</h2>
         
 {/* Review platform icons */}
 <div className="review-links" style={{ marginBottom: '1.5rem' }}>

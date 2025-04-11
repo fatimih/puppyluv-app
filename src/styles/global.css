@@ -97,6 +97,13 @@ nav ul li a {
   white-space: nowrap; /* Prevent links from wrapping */
 }
 
+/* Add this to your global.css file, in the Navigation links section */
+
+/* Active navigation link class */
+nav ul li a.active-nav-link {
+  color: var(--color-accent); /* Uses accent color for active link */
+}
+
 nav ul li a:hover {
   color: var(--color-accent);         /* Update from #FFA500 */
 }
@@ -194,6 +201,11 @@ nav ul li a:hover {
 
 .mobile-menu ul li a:hover {
   color: var(--color-accent);
+}
+
+/* Active navigation link for mobile nav */
+.mobile-menu ul li a.active-nav-link {
+  color: var(--color-accent); /* Uses accent color for active link */
 }
 
 .mobile-social-icons {
@@ -309,6 +321,7 @@ nav ul li a:hover {
   overflow: hidden;
   box-shadow: var(--box-shadow);             /* Update from 0 4px 12px rgba(0, 0, 0, 0.1) */
   position: relative;
+  border: 2px solid var(--color-accent); /* Add this line for the outline/stroke */
 }
 
 .hero-video {
@@ -451,11 +464,11 @@ nav ul li a:hover {
 
 /* Alternating Colors - immediately after base styles */
 .feature-grid > *:nth-child(even) {
-  background: var(--color-primary);          
+  background: var(--color-primary);  
 }
 
 .feature-grid > *:nth-child(odd) {
-  background: var(--color-white);            
+  background: var(--color-white);      
 }
 
 /* Default icons */
@@ -485,11 +498,11 @@ nav ul li a:hover {
 
 /* Swap colors when hovering over the entire grid */
 .feature-grid:hover > *:nth-child(even) {
-  background: var(--color-white);            
+  background: var(--color-white);          
 }
 
 .feature-grid:hover > *:nth-child(odd) {
-  background: var(--color-primary);           
+  background: var(--color-primary); 
 }
 
 /* Swap icons when hovering over the entire grid */
@@ -633,6 +646,10 @@ nav ul li a:hover {
   transform: translateY(-2px);
 }
 
+.more-info-hero-btn:focus {
+  outline: none;
+}
+
 
 /* Review section styling */
 .review-links {
@@ -691,6 +708,7 @@ nav ul li a:hover {
   object-fit: cover;
   border-radius: var(--border-radius);
   margin-bottom: var(--spacing-large);
+  border: 2px solid var(--color-accent); /* Add this line for the outline/stroke */
 }
 
 
@@ -735,6 +753,7 @@ nav ul li a:hover {
   object-fit: cover;
   border-radius: var(--border-radius);
   margin-bottom: var(--spacing-medium);
+  border: 2px solid var(--color-accent); /* Add this line for the outline/stroke */
 }
 
 /* Control neighborhood walks image position */
@@ -831,6 +850,7 @@ nav ul li a:hover {
   object-fit: cover;
   border-radius: var(--border-radius);
   margin-bottom: var(--spacing-large);
+  border: 2px solid var(--color-accent); /* Add this line for the outline/stroke */
 }
 
 .about-grid {
@@ -945,6 +965,7 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .form-group.message {
@@ -953,26 +974,29 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
 .form-group label {
   display: block;
   margin-bottom: var(--spacing-small);     /* Update from 0.5rem */
-  color: var(--color-primary);             /* Update from #CC9933 */
-  font-family: var(--font-secondary);      /* Update */
+  color: var(--color-text-light);             /* Update from #CC9933 */
+  font-family: var(--font-primary); 
+  font-weight: 400;     /* Update */
 }
 
 /* Base styles for all inputs */
 .form-group input,
 .form-group textarea {
   padding: .75rem;
-  border: 1px solid #ddd;
+  border: .5px solid var(--color-accent);
   border-radius: var(--button-radius);     /* Use button radius for consistency */
-  font-family: var(--font-primary);        /* Update */
+  font-family: var(--font-secondary);        /* Update */
   text-align: center;
-  font-weight: 300;
-  font-size: var(--button-font-size);      /* Use button font size for consistency */
+  font-weight: 150;
+  font-size: 1em;      /* Use button font size for consistency */
   background-color: var(--color-white);    /* Update from white */
+  color: var(--color-text-dark)
 }
 
 .form-group input:focus {
@@ -991,13 +1015,13 @@ nav ul li a:hover {
   padding: .75rem;
   border: 1px solid #ddd;
   border-radius: var(--button-radius);     /* Update from 4px */
-  font-family: var(--font-primary);      /* Update */
-  font-size: .75rem;
-  font-weight: 200;
+  font-family: var(--font-secondary);      /* Update */
+  font-size: 1em;
+  font-weight: 150;
+  color: var(--color-primary);              /* Update from #FFA500 */
   width: 40%;
   min-width: 160px;
   background-color: var(--color-white);    /* Update from white */
-  color: var(--color-text-dark);   /* Update from #FFA500 */
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1008,6 +1032,7 @@ nav ul li a:hover {
   background-position: right 0.75rem center;
   background-size: 1em;
   padding-right: 2.5rem;
+  border: .5px solid var(--color-accent);
 }
 
 /* Style the dropdown when it's focused/clicked */
@@ -1020,7 +1045,7 @@ nav ul li a:hover {
 .form-group select option {
   font-family: var(--font-primary);      /* Update */
   background-color: var(--color-white);    /* Update from white */
-  color: var(--color-primary);              /* Update from #FFA500 */
+  color: var(--color-text-dark);              /* Update from #FFA500 */
   padding: var(--spacing-small);           /* Update from 0.5rem */
   text-align: center;  /* Center the dropdown options */
 }
@@ -1029,7 +1054,7 @@ nav ul li a:hover {
 /* Style for when an option is selected */
 .form-group select:focus option:checked {
   background-color: var(--color-accent);   /* Update from #FFA500 */
-  color: var(--color-white);               /* Update from white */
+  color: var(--color-primary);               /* Update from white */
 }
 
 /* Add these specific width controls - keep these after the base styles */
@@ -1043,6 +1068,23 @@ nav ul li a:hover {
   min-height: 100px;
   min-width: 160px;
   resize: vertical;
+}
+
+/* Placeholder text styling */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color:  var(--color-accent);
+  opacity: 0.6; /* Make it more transparent for even lighter appearance */
+  font-style: italic; /* Italicize the text */
+  font-size: .9em; /* Make it smaller than the input text */
+  font-weight: 200; /* Lighter font weight */
+  transition: opacity 0.3s; /* Smooth transition when focusing */
+}
+
+/* Optional: Make placeholder text fade more when input is focused */
+.form-group input:focus::placeholder,
+.form-group textarea:focus::placeholder {
+  opacity: 0.4;
 }
 
 /* Form Button */
@@ -1403,7 +1445,6 @@ nav ul li a:hover {
   -webkit-text-fill-color: var(--color-text-dark);
  
 }
-
 
 
 /* Improve contrast for select dropdowns */

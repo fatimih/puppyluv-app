@@ -105,6 +105,7 @@ function ContactForm() {
           name="name"
           value={formData.name}
           onChange={handleChange}
+          placeholder="Puppy Lover"
           required
         />
       </div>
@@ -117,6 +118,7 @@ function ContactForm() {
           name="email"
           value={formData.email}
           onChange={handleChange}
+          placeholder="puppylover@puppyluvsd.com"
           required
         />
       </div>
@@ -129,6 +131,7 @@ function ContactForm() {
           name="phone"
           value={formData.phone}
           onChange={handleChange}
+          placeholder="123-456-7890"
         />
       </div>
 
@@ -141,6 +144,7 @@ function ContactForm() {
           name="breed"
           value={formData.breed}
           onChange={handleChange}
+          placeholder="e.g., cutiest mix ever"
           required
         />
       </div>
@@ -275,6 +279,7 @@ function ContactForm() {
           name="zipCode"
           value={formData.zipCode}
           onChange={handleChange}
+          placeholder="92101"
           required
         />
       </div>
@@ -288,6 +293,7 @@ function ContactForm() {
           onChange={handleChange}
           required
           rows="4"
+          placeholder="Tell me about your pup's personality, preferences, and anything else I should know..."
         ></textarea>
       </div>
 

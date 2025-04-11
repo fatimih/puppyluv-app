@@ -109,7 +109,10 @@ function Home() {
                 alt="Tima with dogs"
                 className="home-about-image"
               />
-              <h3>Walking has always been a meaningful part of my life—it's where I find connection, especially with pups.</h3>
+              <h3>
+  <span style={{ fontWeight: 'bold' }}>Walking</span> has always been a meaningful part of my life - 
+  <span style={{ fontWeight: 'bold' }}>it's where I find connection</span>, especially with pups.
+</h3>
 
                 </div>
           </div>
@@ -132,7 +135,7 @@ function Home() {
 
               {/* Reviews section */}
       <section className="features about-section" style={{ marginTop: '2rem' }}>
-        <h2>Check out my reviews!</h2>
+        <h2>What the pack has to say?</h2>
         
 {/* Review platform icons */}
 <div className="review-links" style={{ marginBottom: '1.5rem' }}>

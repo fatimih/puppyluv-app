@@ -1,91 +1,69 @@
 // src/pages/About.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import naeVideo from '/nae.mp4';
-import teddyVideo from '/teddy.mp4';
+import timaImage from '../assets/images/tima.jpg';
 
 function About() {
   return (
     <div className="page-content">  
       <section className="hero">
         <h1>Tima</h1>
-        <p>Constantly curious and naturally creative, I have made a lifestyle of wandering around the world with my camera and making meaningful connections.</p>
-        <h2><b>*</b> I am <b>Bonded & Insured</b> and certified by <b>The American Red Cross</b> in <b>Cat and Dog Firt Aid.</b> </h2>
+        <p>Constantly curious and naturally creative, I have made a lifestyle of wandering around the world with my camera and making meaningful connections...</p>
+        <h2><b>*</b>...and I am <b>Bonded & Insured</b> and certified by <b>The American Red Cross</b> in <b>Cat and Dog First Aid.</b> </h2>
       </section>
 
       <section className="features">
         <h2>Why do I do this?</h2>
         <div className="about-grid">
-          <div className="feature-item"style={{ marginTop: '-1rem' }}>
-            <video 
-              autoPlay
-              muted
-              loop
-              src={teddyVideo}
+          <div className="feature-item" style={{ marginTop: '-1rem', marginBottom: '1rem' }}>
+            <img 
+              src={timaImage}
               alt="Tima with dogs"
               className="about-about-image"
             />
-            <h3>Always active, adaptive, and growing - My natural curiosity helps me understand each dog's unique personality, making sure they always feel safe and loved.</h3>
-
-              </div>
+            <h3>
+  <span style={{ fontWeight: 'bold' }}>Always active, adaptive, and growing</span> - My natural curiosity helps me understand each dog's unique personality, making sure they always feel safe and loved. Having spent most of my life traveling
+</h3>
+<p>
+  and living in different parts of the world, I've been welcomed into many homes, and <span style={{ fontWeight: 'bold' }}>I truly value respecting spaces and creating a sense of comfort</span> for pets and their humans.
+</p>
+            <h4>* "<b>Tima-too</b>" started in childhood, and stuck! And is now an endearing family name for me :)</h4>
+          </div>
         </div>
-
-        
-                  <div className="about-grid"style={{ marginTop: '-2.5rem' }}>
-                    <div className="feature-item">
-                      <video 
-                        autoPlay
-                        muted
-                        loop
-                        src={naeVideo}
-                        alt="Tima with dogs"
-                        className="about-image"
-                      />
-                      
-            
-            <p> Having spent most of my life traveling and living in different parts of the world, I've been welcomed into many homes, and I truly value respecting spaces and creating a sense of comfort for pets and their humans.</p>
-
-<h4>** "Tima-too" came from childhood. My parents would ask my older sisters to clean their room, 
-  and they would say "but what about Tima?" and my parent's would reply, 
-  "...and Tima-too!" Later it became an endearing family name for me.</h4>
-          
-                        </div>
-                  </div>
-                
       </section>
 
       <section className="features">
           <h2>Ready to connect?</h2>
           <Link to="/contact">
-            <button className="hero-btn"style={{ marginBottom: '2rem' }}>book "meet and greet!"</button>
+            <button className="hero-btn" style={{ marginBottom: '2rem' }}>book "meet and greet!"</button>
           </Link>
         </section>
 
-                      {/* Reviews section */}
+      {/* Reviews section */}
       <section className="features about-section" style={{ marginTop: '2.5rem' }}>
-        <h2>Check out my reviews!</h2>
+      <h2>What the pack has to say?</h2>
         
-{/* Review platform icons */}
-<div className="review-links" style={{ marginBottom: '1.5rem' }}>
-  <a 
-    href="https://www.yelp.com/biz/puppy-luv-san-diego" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="review-link"
-  >
-    <span className="yelp-icon" aria-label="Yelp Reviews"></span>
-  </a>
-  <a 
-    href="https://www.google.com" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="review-link"
-  >
-    <span className="google-icon" aria-label="Google Reviews"></span>
-  </a>
-</div>
+        {/* Review platform icons */}
+        <div className="review-links" style={{ marginBottom: '1.5rem' }}>
+          <a 
+            href="https://www.yelp.com/biz/puppy-luv-san-diego" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="review-link"
+          >
+            <span className="yelp-icon" aria-label="Yelp Reviews"></span>
+          </a>
+          <a 
+            href="https://www.google.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="review-link"
+          >
+            <span className="google-icon" aria-label="Google Reviews"></span>
+          </a>
+        </div>
       </section>
-      </div> 
+    </div> 
   );
 }
 

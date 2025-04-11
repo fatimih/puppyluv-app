@@ -5,22 +5,22 @@ export const sharedFeatures = [
       <>
         
         <div className="pricing">
-          30 Minutes: $20
+          30 Minutes: <b>$20</b>
           <br />
-          60 Minutes: $25
+          60 Minutes: <b>$25</b>
         </div>
       </>
     ),
     description: (
       <>
-        <p>Taking your dog outside to relieve itself / Feed (if necessary) / Replenish water bowl / Administer medications / Brushing / Grooming.</p>
+        <p>These <b>check-ins are perfect for</b> when you're away during the day. Whether your pup needs a bathroom break, water refreshing, feeding, medications administered, grooming, or a just a little Luv - I will ensure your pup's needs are met with care and attention <b>when you can't be there yourself</b>!</p>
         <br />
         <div className="pricing">
-          30 Minutes: $20
+          30 Minutes: <b>$20</b>
           <br />
-          60 Minutes: $25
+          60 Minutes: <b>$25</b>
           <br />
-          +$5 each additional dog
+          +<b>$5</b> each additional dog
         </div>
       </>
     ),
@@ -31,22 +31,22 @@ export const sharedFeatures = [
       <>
         
         <div className="pricing">
-          30 Minutes: $25
+          30 Minutes: <b>$25</b>
           <br />
-          60 Minutes: $30
+          60 Minutes: <b>$30</b>
         </div>
       </>
     ),
     description: (
       <>
-        <p>A walk or Jog around your neighborhood depending on your dogs energy level. This service will ensure your dog's energy is drained. This gives them the opportunity to relieve themselves, a change of scenery, and outside opportunity to explore their surroundings. They will come back home tired and happy!</p>
+        <p><b>Exploring your neighborhood</b>! Taking your pup for an energetic outing right in your own neighborhood, tailoring the pace to match their energy level. Whether it's a leisurely stroll or a brisk jog, your dog will enjoy exploring familiar surroundings while getting the exercise they need. This service ensures they get outdoor time to stretch their legs and relieve themselves, <b>returning home pleasantly tired and content</b>.</p>
         <br />
         <div className="pricing">
-          30 Minutes: $25
+          30 Minutes: <b>$25</b>
           <br />
-          60 Minutes: $30
+          60 Minutes: <b>$30</b>
           <br />
-          +$5 each additional dog
+          +<b>$5</b> each additional dog
         </div>
       </>
     ),
@@ -57,18 +57,18 @@ export const sharedFeatures = [
     <>
       
       <div className="pricing">
-        60 - 90 Minutes: $35
+        60 - 90 Minutes: <b>$35</b>
       </div>
     </>
   ),
   description: (
     <>
-      <p>A trip to your local dog park. This service will provide the most undivided attention in ensuring your dog's energy is reduced drastically so that they can relax when they arrive home. This will also provide important socialization with other dogs.</p>
+      <p><b>A Dog Park Trip</b>! I'll take your pup to your local dog park where they can run freely and play with other dogs in a safe environment. Giving my complete attention to your dog, they will get plenty of exercise and positive social interactions. This service focuses on <b>your dog burning off their energy so they return home happily tired and ready to relax</b>!</p>
       <br />
       <div className="pricing">
-        60 - 90 Minutes: $35
+        60 - 90 Minutes: <b>$35</b>
         <br />
-        +$10 each additional dog
+        +<b>$10</b> each additional dog
       </div>
     </>
   ),
@@ -79,18 +79,18 @@ export const sharedFeatures = [
     <>
       
       <div className="pricing">
-        60 - 90 Minutes: $40
+        60 - 90 Minutes: <b>$40</b>
       </div>
     </>
   ),
   description: (
     <>
-      <p>A Trip to your local dog beach! This service will provide a beach experience at either Ocean Beach Dog Beach or Coronado Dog Beach depending on your location. They will have the freedom to run and swim amongst other dogs and experience the San Diego beach life we all love to enjoy. Your dog will have a great time and will be tired for hours!</p>
+      <p><b>A dog beach Adventure</b>! I'll take your pup for a memorable outing to either Ocean Beach or Coronado Dog Beach (depending on your location). These amazing off-leash beaches give dogs the freedom to run, splash in the waves, and socialize. <b>Like a true San Diegan, your pup will return home happily exhausted after all that beach play</b>!</p>
       <br />
       <div className="pricing">
-        60 - 90 Minutes: $40
+        60 - 90 Minutes: <b>$40</b>
         <br />
-        +$10 each additional dog
+        +<b>$10</b> each additional dog
       </div>
     </>
   ),
@@ -101,18 +101,18 @@ export const sharedFeatures = [
     <>
       
       <div className="pricing">
-        90 - 120 Minutes: $45
+        90 - 120 Minutes: <b>$45</b>
       </div>
     </>
   ),
   description: (
     <>
-      <p>Trip to a local hiking trail! San Diego has several dog friendly trails that will provide a fun experience for your dog. This service will allow your dog to get a solid workout and beautiful natural scenery providing epic views and memories your dog will never forget.</p>
+      <p><b>Trail Time offers your pup a fun, active outing</b> on one of San Diego’s beautiful dog-friendly hikes. It’s a chance to explore nature, get a great workout, and take in stunning views - something I truly love sharing with the pups I care for. <b>They will return home grounded and at peace</b>.</p>
       <br />
       <div className="pricing">
-        90 - 120 Minutes: $45
+        90 - 120 Minutes: <b>$45</b>
         <br />
-        +$10 each additional dog
+        +<b>$10</b> each additional dog
       </div>
     </>
   ),
@@ -123,24 +123,24 @@ export const sharedFeatures = [
     <>
       
       <div className="pricing">
-        Half Day Hours 8pm-8am: $50
+        Half Day Hours 8pm-8am: <b>$50</b>
         <br />
-        Full Day (24 hrs): $100
+        Full Day (24 hrs): <b>$100</b>
       </div>
     </>
   ),
   description: (
     <>
-      <p>Half Day Dog Sitting services offer a 1 hr morning and evening walk, spending the night in your home attending to any of your dog's needs. Special meal preparation, medication administration and the cleanliness of your home. We will ensure your dog and your home is safe and in the best care.</p>
+      <p><b>Half Day Dog Sitting provides</b> one-hour walks in the morning and evening, along with <b>overnight care in the comfort of your home</b>. I tailor my care to your pup’s needs - handling meal preparation, medication, and keeping your home clean and secure. <b>Both your dog and your home will be safe and well cared for</b>.</p>
       <br />
-      <p>Full Day Dog Sitting services offer 24 hr care. This includes the BEST care providing 100% attention to your dog. Will go on 2 neighborhood walks and everyday trips to a dog park, beach, or hiking trail. This also includes Overnight stay, special meal preparation, medication administration and the cleanliness of your home.</p>
+      <p><b>Full Day Dog Sitting provides 24-hour, personalized care in the comfort of your home</b>. This includes an overnight stay, <b>two neighborhood walks</b>, and <b>enriching daily outings</b> to the dog park, beach, or hiking trail. I handle every detail - custom meal preparation, medication administration, <b>and maintaining a spotless, secure home throughout the stay</b>.</p>
       <br />
       <div className="pricing">
-        Half Day Hours 8pm-8am: $50
+        Half Day Hours 8pm-8am: <b>$50</b>
         <br />
-        Full Day (24 hrs): $100
+        Full Day (24 hrs): <b>$100</b>
         <br />
-        +$10 each additional dog
+        +<b>$10</b> each additional dog
       </div>
     </>
   ),
