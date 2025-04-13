@@ -107,9 +107,9 @@ function Home() {
                 loop
                 src={timaVideo}
                 alt="Tima with dogs"
-                className="home-about-image"
+                className="home-about-image" 
               />
-              <h3>
+<h3 style={{ fontSize: '1.5rem' }}>
   <span style={{ fontWeight: 'bold' }}>Walking</span> has always been a meaningful part of my life - 
   <span style={{ fontWeight: 'bold' }}>it's where I find connection</span>, especially with pups.
 </h3>

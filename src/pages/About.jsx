@@ -7,9 +7,9 @@ function About() {
   return (
     <div className="page-content">  
       <section className="hero">
-        <h1>Tima</h1>
+        <h1>Tima-too</h1>
         <p>Constantly curious and naturally creative, I have made a lifestyle of wandering around the world with my camera and making meaningful connections...</p>
-        <h2><b>*</b>...and I am <b>Bonded & Insured</b> and certified by <b>The American Red Cross</b> in <b>Cat and Dog First Aid.</b> </h2>
+        <h2><b>*</b>...and I am <b>Bonded </b>&<b> Insured</b> and certified by <b>The American Red Cross</b> in <b>Cat</b> & <b>Dog First Aid</b> </h2>
       </section>
 
       <section className="features">
@@ -19,14 +19,11 @@ function About() {
             <img 
               src={timaImage}
               alt="Tima with dogs"
-              className="about-about-image"
+              className="about-about-image" style={{marginBottom:'1.7rem' }}
             />
-            <h3>
-  <span style={{ fontWeight: 'bold' }}>Always active, adaptive, and growing</span> - My natural curiosity helps me understand each dog's unique personality, making sure they always feel safe and loved. Having spent most of my life traveling
+           <h3>
+  <span style={{ fontWeight: 'bold' }}>Always active, adaptive, and growing</span> - My natural curiosity helps me understand each dog's unique personality, making sure they always feel safe and loved. Having spent most of <span style={{ fontSize: '0.8em' }}>my life traveling and living in different parts of the world, I've been welcomed into many homes, and <span style={{ fontWeight: 'bold' }}>I truly value respecting spaces and creating a sense of comfort</span> for pets and their humans.</span>
 </h3>
-<p>
-  and living in different parts of the world, I've been welcomed into many homes, and <span style={{ fontWeight: 'bold' }}>I truly value respecting spaces and creating a sense of comfort</span> for pets and their humans.
-</p>
             <h4>* "<b>Tima-too</b>" started in childhood, and stuck! And is now an endearing family name for me :)</h4>
           </div>
         </div>

@@ -890,7 +890,7 @@ nav ul li a:hover {
 .about-grid .feature-item h3 {
   font-family: var(--font-secondary);          /* Update from "futura-pt", sans-serif */
   font-weight: 300; /* Medium font weight */
-  font-size: 1.8rem; /* Font size for titles */
+  font-size: 1.5rem; /* Font size for titles */
   text-align: center; /* Center text */
 }
 
@@ -899,7 +899,7 @@ nav ul li a:hover {
 .about-grid .feature-item p {
   font-family: var(--font-secondary);          /* Update from "futura-pt", sans-serif */
   font-weight: 300; /* Medium font weight */
-  font-size: 1.5rem; /* Font size for titles */
+  font-size: 1.2rem; /* Font size for titles */
   text-align: center; /* Center text */
 }
 
@@ -1447,7 +1447,7 @@ nav ul li a:hover {
   height: 200px;
   object-fit: cover;
   border-radius: var(--border-radius);
-  margin-bottom: var(--spacing-large);
+  margin-bottom : var(--spacing-large);
 }
 
 .home-about-image {  /* Add this new block here */
@@ -1506,7 +1506,7 @@ input[id="specificEndDate"] {
 /* Create placeholder effect for date inputs before value is selected */
 .contact-form input[type="date"]:not(:valid):before {
   content: "mm/dd/yyyy";
-  color: #FFA500;
+  color: #CC9933;
   position: absolute;
   top: 50%;
   left: 50%;
