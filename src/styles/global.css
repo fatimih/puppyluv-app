@@ -970,7 +970,7 @@ nav ul li a:hover {
 
 .form-group.message {
   width: 100%;
-  text-align: center;
+  text-align: left;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -996,7 +996,7 @@ nav ul li a:hover {
   font-weight: 150;
   font-size: 1em;      /* Use button font size for consistency */
   background-color: var(--color-white);    /* Update from white */
-  color: var(--color-text-dark)
+  color: #CC9933;
 }
 
 .form-group input:focus {
@@ -1007,6 +1007,7 @@ nav ul li a:hover {
 /* Override browser autofill background */
 .form-group input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px #fff8dc inset !important;  /* Light golden background */
+  -webkit-text-fill-color: #CC9933 !important; /* Text color */
 }
 
 
@@ -1018,7 +1019,7 @@ nav ul li a:hover {
   font-family: var(--font-secondary);      /* Update */
   font-size: 1em;
   font-weight: 150;
-  color: var(--color-primary);              /* Update from #FFA500 */
+  color: #FFA500;             /* Update from #FFA500 */
   width: 40%;
   min-width: 160px;
   background-color: var(--color-white);    /* Update from white */
@@ -1035,8 +1036,43 @@ nav ul li a:hover {
   border: .5px solid var(--color-accent);
 }
 
+/* Style for when an option is selected */
+.form-group select.has-value {
+  color: #CC9933;  /* Gold color for selected value */
+  border-color: #FFA500;
+  font-weight: 400;
+}
+
 /* Style the dropdown when it's focused/clicked */
 .form-group select:focus {
+  outline: 1px;
+}
+
+/* Style the options in the dropdown */
+.form-group select option {
+  font-family: var(--font-primary);
+  background-color: var(--color-white);
+  color: #FFA500;             
+  padding: var(--spacing-small);
+  text-align: center;
+}
+
+/* This targets the first option (placeholder) in your dropdowns */
+.form-group select option:first-child {
+  color: #FFA500;  /* Keep the placeholder orange */
+}
+
+/* This targets all other options (actual values) */
+.form-group select option:not(:first-child) {
+  color: #CC9933;  /* Make the actual options gold */
+}
+
+/* Style the dropdown when it's focused/clicked */
+.form-group select:focus {
+  outline: 1px;
+  border-color: var(--color-primary);      /* Update from #CC9933 */
+}
+.form-group.message textarea:focus {
   outline: 1px;
   border-color: var(--color-primary);      /* Update from #CC9933 */
 }
@@ -1045,17 +1081,12 @@ nav ul li a:hover {
 .form-group select option {
   font-family: var(--font-primary);      /* Update */
   background-color: var(--color-white);    /* Update from white */
-  color: var(--color-text-dark);              /* Update from #FFA500 */
+  color: #FFA500;             /* Update from #FFA500 */
   padding: var(--spacing-small);           /* Update from 0.5rem */
   text-align: center;  /* Center the dropdown options */
 }
 
 
-/* Style for when an option is selected */
-.form-group select:focus option:checked {
-  background-color: var(--color-accent);   /* Update from #FFA500 */
-  color: var(--color-primary);               /* Update from white */
-}
 
 /* Add these specific width controls - keep these after the base styles */
 .form-group.short-input input {
@@ -1069,6 +1100,7 @@ nav ul li a:hover {
   min-width: 160px;
   resize: vertical;
 }
+
 
 /* Placeholder text styling */
 .form-group input::placeholder,
@@ -1439,22 +1471,16 @@ nav ul li a:hover {
 
 
 /* Add subtle visual cue that fields are editable */
-.contact-form .form-group input,
-.contact-form .form-group textarea,
+
 .contact-form .form-group select {
-  -webkit-text-fill-color: var(--color-text-dark);
- 
-}
+  color: #FFA500;
+ }
 
+ .contact-form .form-group input{
+  color: #CC9933;
+ }
 
-/* Improve contrast for select dropdowns */
-.contact-form select {
-  color: #333 !important;
-  background-color: #fff !important;
-}
-
-
-/* Fix for date input field appearance on mobile */
+ /* Fix for date input field appearance on mobile */
 .contact-form input[type="date"] {
   display: block !important;
   width: 80% !important;
@@ -1463,11 +1489,11 @@ nav ul li a:hover {
   appearance: textfield !important; /* Show mm/dd/yyyy format */
   -webkit-appearance: textfield !important;
   position: relative;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
+  /* Calendar icon styling below */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23CC9933' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 16px;
-  padding-right: 30px !important;
+  background-position: right 16px center;
+  background-size: 10px;
 }
 
 /* Make sure date inputs get proper calendar icon */
@@ -1479,27 +1505,34 @@ input[id="specificEndDate"] {
 
 /* Create placeholder effect for date inputs before value is selected */
 .contact-form input[type="date"]:not(:valid):before {
-  content: "MM/DD/YYYY";
-  color: #999;
+  content: "mm/dd/yyyy";
+  color: #FFA500;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
-  
-  /* Clean up redundant date input styling */
-  .contact-form input[type="date"] {
-    /* Reset to desktop styling */
-    text-align: center !important;
-    -webkit-appearance: none !important;
-    appearance: none !important;
-    width: 40% !important;
-    min-width: 160px !important;
-    padding: .75rem !important;
-    background-position: center right 10px !important;
-    color: #333 !important;
-  }
+
+/* Remove the dropdown arrow from date inputs */
+.contact-form input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none !important;
+}
+
+/* Alternative approach to remove dropdown arrow */
+.contact-form input[type="date"] {
+  /* Keep your existing styling */
+  /* Add this to remove dropdown arrow in other browsers */
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  /* Make sure background image is the only indicator */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23CC9933' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 16px center !important;
+  background-size: 10px !important;
+}
+
 
 }
 
@@ -1584,12 +1617,7 @@ input[id="specificEndDate"] {
     margin-bottom: 0;
   }
 
-  .form-container {
-    width: 90%;
-    max-width: 700px;
-    margin: 0 auto;
-    margin-bottom: 2rem;
-  }
+
 
   .about-about-image {  /* Add this new block here */
     width: 100%;

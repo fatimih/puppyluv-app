@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 function ContactForm() {
   const [formData, setFormData] = useState({
@@ -17,6 +17,13 @@ function ContactForm() {
     zipCode: '',
     message: ''
   });
+
+  // Create refs for all select elements
+const sizeSelectRef = useRef(null);
+const ageSelectRef = useRef(null);
+const serviceSelectRef = useRef(null);
+const durationSelectRef = useRef(null);
+const endDateSelectRef = useRef(null);
 
   const [submitted, setSubmitted] = useState(false);
 
@@ -42,7 +49,42 @@ function ContactForm() {
         [name]: value
       }));
     }
+    // If this is a select element, add/remove the has-value class
+if (e.target.tagName === 'SELECT') {
+  // Check if the selected value is not the default/empty option
+  if (value && value !== '' && !value.includes('Select') && value !== 'specific') {
+    e.target.classList.add('has-value');
+  } else {
+    e.target.classList.remove('has-value');
+  }
+}
   };
+
+  // Update select classes when form data changes
+useEffect(() => {
+  // Array of refs and their corresponding form data fields
+  const selectRefs = [
+    { ref: sizeSelectRef, field: 'size' },
+    { ref: ageSelectRef, field: 'age' },
+    { ref: serviceSelectRef, field: 'service' },
+    { ref: durationSelectRef, field: 'duration' },
+    { ref: endDateSelectRef, field: 'endDate' }
+  ];
+  
+  // Update classes for all select elements
+  selectRefs.forEach(({ ref, field }) => {
+    if (ref.current) {
+      const value = formData[field];
+      if (value && value !== '' && !value.includes('Select') && value !== 'specific') {
+        ref.current.classList.add('has-value');
+      } else {
+        ref.current.classList.remove('has-value');
+      }
+    }
+  });
+}, [formData]);
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -83,6 +125,14 @@ function ContactForm() {
       zipCode: '',
       message: ''
     });
+
+    // Reset all select classes
+[sizeSelectRef, ageSelectRef, serviceSelectRef, 
+  durationSelectRef, endDateSelectRef].forEach(ref => {
+   if (ref.current) {
+     ref.current.classList.remove('has-value');
+   }
+ });
   };
 
   // If the form is submitted, display the thank-you message
@@ -157,6 +207,7 @@ function ContactForm() {
           value={formData.size}
           onChange={handleChange}
           required
+          ref={endDateSelectRef}
         >
           <option value="">Select size</option>
           <option value="small">Small (under 20 lbs)</option>
@@ -173,6 +224,7 @@ function ContactForm() {
           value={formData.age}
           onChange={handleChange}
           required
+          ref={endDateSelectRef}
         >
           <option value="">Select age</option>
           <option value="puppy">Puppy (6-24 months)</option>
@@ -190,6 +242,7 @@ function ContactForm() {
           value={formData.service}
           onChange={handleChange}
           required
+          ref={endDateSelectRef}
         >
           <option value="">Select service</option>
           <option value="drop-in-visits">Drop-in Visits</option>
@@ -209,6 +262,7 @@ function ContactForm() {
           value={formData.duration}
           onChange={handleChange}
           required
+          ref={endDateSelectRef}
         >
           <option value="">Select duration</option>
           <option value="30min">30 Minutes</option>
@@ -229,6 +283,7 @@ function ContactForm() {
             value={formData.specificStartDate}
             onChange={handleChange}
             required
+            ref={endDateSelectRef}
           />
         ) : (
           <select
@@ -237,6 +292,7 @@ function ContactForm() {
             value={formData.startDate}
             onChange={handleChange}
             required
+            ref={endDateSelectRef}
           >
             <option value="">Select start date</option>
             <option value="asap">ASAP</option>
@@ -255,6 +311,7 @@ function ContactForm() {
             value={formData.specificEndDate}
             onChange={handleChange}
             required
+            ref={endDateSelectRef}
           />
         ) : (
           <select
@@ -263,6 +320,7 @@ function ContactForm() {
             value={formData.endDate}
             onChange={handleChange}
             required
+            ref={endDateSelectRef}
           >
             <option value="">Select end date</option>
             <option value="indefinite">Indefinitely</option>
