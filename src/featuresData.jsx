@@ -136,7 +136,7 @@ export const sharedFeatures = [
       <p><b>Full Day Dog Sitting provides 24-hour, personalized care in the comfort of your home</b>. This includes an overnight stay, <b>two neighborhood walks</b>, and <b>enriching daily outings</b> to the dog park, beach, or hiking trail. I handle every detail - custom meal preparation, medication administration, <b>and maintaining a spotless, secure home throughout the stay</b>.</p>
       <br />
       <div className="pricing">
-        Half Day Hours 8pm-8am: <b>$50</b>
+        Half Day (12 hrs) Evening - Morning: <b>$50</b>
         <br />
         Full Day (24 hrs): <b>$100</b>
         <br />

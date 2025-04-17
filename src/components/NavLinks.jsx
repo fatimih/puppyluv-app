@@ -14,16 +14,40 @@ const NavLinks = () => {
   return (
     <ul className="nav-links">
       <li>
-        <Link to="/" onClick={() => handleClick('/')}>Home</Link>
+        <Link 
+          to="/" 
+          onClick={() => handleClick('/')}
+          className={location.pathname === "/" ? "active-nav-link" : ""}
+        >
+          Home
+        </Link>
       </li>
       <li>
-        <Link to="/services" onClick={() => handleClick('/services')}>Services</Link>
+        <Link 
+          to="/services" 
+          onClick={() => handleClick('/services')}
+          className={location.pathname === "/services" ? "active-nav-link" : ""}
+        >
+          Services
+        </Link>
       </li>
       <li>
-        <Link to="/about" onClick={() => handleClick('/about')}>About</Link>
+        <Link 
+          to="/about" 
+          onClick={() => handleClick('/about')}
+          className={location.pathname === "/about" ? "active-nav-link" : ""}
+        >
+          About
+        </Link>
       </li>
       <li>
-        <Link to="/contact" onClick={() => handleClick('/contact')}>Contact</Link>
+        <Link 
+          to="/contact" 
+          onClick={() => handleClick('/contact')}
+          className={location.pathname === "/contact" ? "active-nav-link" : ""}
+        >
+          Contact
+        </Link>
       </li>
     </ul>
   );

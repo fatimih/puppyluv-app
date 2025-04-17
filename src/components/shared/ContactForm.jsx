@@ -1,6 +1,8 @@
+import { Italic } from 'lucide-react';
 import React, { useState, useEffect, useRef } from 'react';
 
 function ContactForm() {
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -88,6 +90,9 @@ useEffect(() => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+        // Comment out the fetch call to prevent actual form submission
+    /*
     fetch('https://formspree.io/f/xrbpozga', {
       method: 'POST',
       headers: {
@@ -107,7 +112,13 @@ useEffect(() => {
         console.error("Error submitting form", error);
         alert("There was an error. Please try again later.");
       });
+       */
     
+    // For testing, just set submitted to true directly
+    setSubmitted(true);
+ 
+
+
     // Optionally, reset the formData if needed:
     setFormData({
       name: '',
@@ -135,14 +146,135 @@ useEffect(() => {
  });
   };
 
-  // If the form is submitted, display the thank-you message
+
+ // This is just the section that needs to be fixed - replace only this part in your code
+
+// If the form is submitted, display the thank-you message with typing animation
+const [displayText, setDisplayText] = useState('');
+const fullText = "  Thank you!\nI will be in touch with you\nand your pup, shortly :)";
+
+useEffect(() => {
   if (submitted) {
-    return (
-      <div className="contact-form-message">
-        <p>Thank you! <p></p>I will be in touch shortly :)</p>
-      </div>
-    );
+    let currentText = '';
+    let currentIndex = 0;
+    let timeoutId;
+
+    const typeNextCharacter = () => {
+      if (currentIndex < fullText.length) {
+        const currentChar = fullText[currentIndex];
+        
+        // Check for special pause points
+        let pauseDuration = 90; // default typing speed
+        
+        // Fast typing for "Thank you!" (20ms per character)
+        if (currentIndex < 11) {
+          pauseDuration = 35;
+        } else if (currentIndex === 11) {
+          // After "Thank you!"
+          pauseDuration = 900;
+        } else if (currentIndex === 39) {
+          // After "I will be in touch with you"
+          pauseDuration = 400;
+        } else if (currentIndex === 52) {
+          // After "and your pup"
+          pauseDuration = 350; // shorter pause here
+        }
+        
+        // Add current character to our tracking variable
+        if (currentChar === '\n') {
+          currentText += '<br>';
+        } else {
+          currentText += currentChar;
+        }
+        
+        // Apply bold formatting to specific segments
+        let formattedText = currentText;
+        
+        // Look for "Thank you!" and make it bold
+        formattedText = formattedText.replace(/Thank you!/g, '<span style="font-size: 1.3em; font-weight: bold;">Thank you!</span>');
+        
+        // Look for "and your pup" and make it bold
+        formattedText = formattedText.replace(/and your pup/g, '<i><b>and your pup</b></i>');
+        
+        // Look for ":)" and make it bold
+        formattedText = formattedText.replace(/:\)/g, '<b>:)</b>');
+        
+        // Update the display
+        setDisplayText(formattedText);
+        
+        currentIndex++;
+        
+        // Use the determined pause duration
+        timeoutId = setTimeout(typeNextCharacter, pauseDuration);
+      }
+    };
+
+    timeoutId = setTimeout(typeNextCharacter, 500);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }
+}, [submitted]);
+
+if (submitted) {
+  return (
+    <div className="contact-form-message">
+      <div className="typing-container">
+        <p
+          className="typing-text"
+          dangerouslySetInnerHTML={{ __html: displayText }}
+        ></p>
+      </div>
+
+      <style jsx>{`
+        .contact-form-message {
+          text-align: center;
+          color: var(--color-accent);
+          font-size: 1rem;
+          margin-top: 2.5rem;
+          line-height: 1.3;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 200px;
+        }
+
+        .typing-container {
+          position: relative;
+          max-width: 400px;
+          margin: none;
+          padding: none;
+        }
+
+        .typing-text {
+          position: relative;
+          margin: 0;
+          padding: 0;
+          color: var(--color-accent);
+        }
+
+        .typing-text::after {
+          content: '|';
+          color: var(--color-primary);
+          animation: blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+          from,
+          to {
+            opacity: 0;
+          }
+          50% {
+            opacity: 1;
+          }
+        }
+      `}</style>
+    </div>
+  );
+}
+
+  
 
   // Otherwise, render the form
   return (
@@ -155,7 +287,7 @@ useEffect(() => {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          placeholder="Puppy Lover"
+          placeholder="Puppy Luver"
           required
         />
       </div>
@@ -168,7 +300,7 @@ useEffect(() => {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          placeholder="puppylover@puppyluvsd.com"
+          placeholder="puppyluver@puppyluvsd.com"
           required
         />
       </div>
@@ -181,7 +313,7 @@ useEffect(() => {
           name="phone"
           value={formData.phone}
           onChange={handleChange}
-          placeholder="123-456-7890"
+          placeholder="619-123-4567"
         />
       </div>
 
@@ -337,7 +469,7 @@ useEffect(() => {
           name="zipCode"
           value={formData.zipCode}
           onChange={handleChange}
-          placeholder="92101"
+          placeholder="92104"
           required
         />
       </div>

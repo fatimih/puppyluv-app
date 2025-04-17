@@ -5,7 +5,6 @@ import FeatureItem from '../components/FeatureItem';
 import FeatureGrid from '../components/FeatureGrid';
 import yelpIcon from '../assets/icons/yelp.svg';
 import googleIcon from '../assets/icons/google.svg';
-import naeVideo from '/nae.mp4';
 import timaVideo from '/tima.mp4';
 
 
@@ -111,7 +110,7 @@ function Home() {
               />
 <h3 style={{ fontSize: '1.5rem' }}>
   <span style={{ fontWeight: 'bold' }}>Walking</span> has always been a meaningful part of my life - 
-  <span style={{ fontWeight: 'bold' }}>it's where I find connection</span>, especially with pups.
+  <span style={{ fontWeight: 'bold' }}> it's where I find connection</span>, especially with pups.
 </h3>
 
                 </div>
@@ -127,7 +126,7 @@ function Home() {
 
         
      <section className="features"style={{ marginTop: '1.5rem'}}>
-          <h2>Ready to connect?</h2>
+          <h2>Shall we talk 'pups'?</h2>
           <Link to="/contact">
             <button className="hero-btn"style={{ marginBottom: '2rem'}}>book "meet and greet!"</button>
           </Link>
@@ -148,7 +147,7 @@ function Home() {
     <span className="yelp-icon" aria-label="Yelp Reviews"></span>
   </a>
   <a 
-    href="https://www.google.com" 
+    href="https://g.co/kgs/2a5i4p1" 
     target="_blank" 
     rel="noopener noreferrer"
     className="review-link"

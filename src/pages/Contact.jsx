@@ -22,7 +22,7 @@ function Contact() {
         </div>
        </section>
        <section className="features"style={{ marginTop: '1.5rem'}}>
-          <h2>Need an overview of my services?</h2>
+          <h2>How can I serve your pup?</h2>
           <Link to="/services">
             <button className="hero-btn"style={{ marginBottom: '2rem' }}>view services</button>
           </Link>
@@ -43,7 +43,7 @@ function Contact() {
     <span className="yelp-icon" aria-label="Yelp Reviews"></span>
   </a>
   <a 
-    href="https://www.google.com" 
+    href="https://g.co/kgs/2a5i4p1" 
     target="_blank" 
     rel="noopener noreferrer"
     className="review-link"

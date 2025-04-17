@@ -7,7 +7,7 @@ function About() {
   return (
     <div className="page-content">  
       <section className="hero">
-        <h1>Tima-too</h1>
+        <h1>Your pup's in good company with Tima-too!</h1>
         <p>Constantly curious and naturally creative, I have made a lifestyle of wandering around the world with my camera and making meaningful connections...</p>
         <h2><b>*</b>...and I am <b>Bonded </b>&<b> Insured</b> and certified by <b>The American Red Cross</b> in <b>Cat</b> & <b>Dog First Aid</b> </h2>
       </section>
@@ -30,7 +30,7 @@ function About() {
       </section>
 
       <section className="features">
-          <h2>Ready to connect?</h2>
+          <h2>Ready to talk 'pups'?</h2>
           <Link to="/contact">
             <button className="hero-btn" style={{ marginBottom: '2rem' }}>book "meet and greet!"</button>
           </Link>
@@ -51,7 +51,7 @@ function About() {
             <span className="yelp-icon" aria-label="Yelp Reviews"></span>
           </a>
           <a 
-            href="https://www.google.com" 
+            href="https://g.co/kgs/2a5i4p1" 
             target="_blank" 
             rel="noopener noreferrer"
             className="review-link"

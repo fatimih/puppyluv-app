@@ -64,23 +64,46 @@ const FeatureGrid = ({ children }) => {
     }
   };
 
-  // Base styles for indicators
+  // CSS for the alternating pulsing animations
+  useEffect(() => {
+    // Create style element
+    const style = document.createElement('style');
+    
+    // Add keyframes animations for alternating pulsing
+    style.innerHTML = `
+      @keyframes pulseLeftArrow {
+        0% { opacity: 0.5; }
+        25% { opacity: 1; }
+        50% { opacity: 0.5; }
+        100% { opacity: 0.5; }
+      }
+      
+      @keyframes pulseRightArrow {
+        0% { opacity: 0.5; }
+        50% { opacity: 0.5; }
+        75% { opacity: 1; }
+        100% { opacity: 0.5; }
+      }
+    `;
+    
+    // Append to document head
+    document.head.appendChild(style);
+    
+    // Clean up
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
+  // Base styles for indicators - positioning below the grid
   const indicatorStyle = {
     position: 'absolute',
-    top: '50%',
-    transform: 'translateY(-50%)',
-    width: '40px',
-    height: '40px',
-    backgroundColor: 'rgba(255, 255, 255, 0.3)',
-    borderRadius: '50%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: 'black',
-    zIndex: 10,
+    bottom: '-5px', // Position further below the grid
+    transform: 'none', // Remove the vertical centering
     cursor: 'pointer',
-    transition: 'all 0.3s ease',
-    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
+    zIndex: 10,
+    padding: '0',
+    background: 'transparent',
   };
 
   // Hover handler for indicators
@@ -93,9 +116,10 @@ const FeatureGrid = ({ children }) => {
       style={{ 
         position: 'relative', 
         width: '100%',
+        paddingBottom: '0', // Add padding to make room for the arrows
       }}
     >
-      {/* Left scroll indicator circle - only show when not wrapped */}
+      {/* Left scroll indicator - positioned to the left of the right arrow */}
       {isHovered && showLeftIndicator && !isWrapped && (
         <div 
           onClick={scrollLeft}
@@ -103,12 +127,13 @@ const FeatureGrid = ({ children }) => {
           onMouseLeave={() => setLeftHovered(false)}
           style={{
             ...indicatorStyle,
-            left: '50px',
-            backgroundColor: leftHovered ? 'rgba(255, 255, 255, 0.6)' : 'rgba(255, 255, 255, 0.3)'
+            right: '90px', // Position left arrow to the left of the right arrow
+            animation: 'pulseLeftArrow 2s infinite', // Left arrow animation
           }}
         >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2">
-            <path d="M15 18l-6-6 6-6" />
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFA500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="24" y1="12" x2="6" y2="12"></line>
+            <polyline points="12 18 6 12 12 6"></polyline>
           </svg>
         </div>
       )}
@@ -131,7 +156,7 @@ const FeatureGrid = ({ children }) => {
         })}
       </div>
       
-      {/* Right scroll indicator circle - only show when not wrapped */}
+      {/* Right scroll indicator - position unchanged */}
       {isHovered && showRightIndicator && !isWrapped && (
         <div 
           onClick={scrollRight}
@@ -140,11 +165,12 @@ const FeatureGrid = ({ children }) => {
           style={{
             ...indicatorStyle,
             right: '50px',
-            backgroundColor: rightHovered ? 'rgba(255, 255, 255, 0.6)' : 'rgba(255, 255, 255, 0.3)'
+            animation: 'pulseRightArrow 2s infinite', // Right arrow animation
           }}
         >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2">
-            <path d="M9 18l6-6-6-6" />
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFA500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="0" y1="12" x2="18" y2="12"></line>
+            <polyline points="12 6 18 12 12 18"></polyline>
           </svg>
         </div>
       )}
