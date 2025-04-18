@@ -1,4 +1,3 @@
-// Footer.jsx
 import React from 'react';
 import { Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -31,13 +30,22 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-text">
-        <p>© 2025 Puppy Luv</p>
+        <p>
+          Designed and Developed by{' '}
+          <a
+            href="https://lightandtones.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
+            lightandtones
+          </a>
+          <br />
+          © 2025 PuppyLuv
+        </p>
       </div>
     </footer>
   );
 };
 
 export default Footer;
-
-
-

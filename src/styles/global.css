@@ -1207,7 +1207,7 @@ nav ul li a:hover {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1rem; /* adjust spacing as needed */
+  gap: 2rem; /* adjust spacing as needed */
   margin: 0; 
 }
 
@@ -1227,7 +1227,7 @@ nav ul li a:hover {
   padding-top: 1rem;
   justify-content: center; /* Centers items horizontally */
   gap: 1.5rem; /* Adjust spacing between the nav links and social icons */
-  margin-bottom: 1rem; /* Space between the nav/social row and the footer text */
+  margin-bottom: 1.5rem; /* Space between the nav/social row and the footer text */
 }
 
 /* Optionally, remove the margin-top from .footer-social-icons if it interferes with the alignment */
@@ -1235,6 +1235,32 @@ nav ul li a:hover {
   margin-top: 0;
 }
 
+/* Footer Link Styles */
+.footer-link {
+  color: var(--color-accent); /* Uses your existing accent color variable */
+  font-family: var(--font-primary); /* Using primary font */
+  font-weight: 300; /* Match the lighter weight you use for headings */
+  letter-spacing: 0.02em; /* Subtle letter spacing */
+  font-size: 0.6rem; /* Font size for footer links */
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+  color: var(--color-text-dark);
+}
+
+/* Add space between the two lines in footer */
+.footer-text p {
+  line-height: 1.4; /* Increases spacing between lines */
+}
+
+/* Or for more specific control */
+.footer-text p br {
+  margin: 0; /* Adds space after the line break */
+  display: block; /* Makes the margin work */
+  content: ""; /* Required for display: block on a <br> */
+}
 
 /* 9. Media Queries */
 
@@ -1537,6 +1563,13 @@ input[id="specificEndDate"] {
   background-size: 10px !important;
 }
 
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem; /* adjust spacing as needed */
+  margin: 0; 
+}
+
 
 }
 
@@ -1631,6 +1664,8 @@ input[id="specificEndDate"] {
     margin-bottom: var(--spacing-large);
     margin-top: -1rem;
   }
+
+
  
   
 }
