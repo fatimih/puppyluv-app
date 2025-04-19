@@ -131,12 +131,12 @@ export const sharedFeatures = [
   ),
   description: (
     <>
-      <p><b>Half Day Dog Sitting provides</b> one-hour walks in the morning and evening, along with <b>overnight care in the comfort of your home</b>. I tailor my care to your pup’s needs - handling meal preparation, medication, and keeping your home clean and secure. <b>Both your dog and your home will be safe and well cared for</b>.</p>
+      <p><b>Half Day Dog Sitting provides</b> one-hour walks in the morning and evening, along with <b> 12-hour, overnight care in the comfort of your home</b>. I tailor my care to your pup’s needs - handling meal preparation, medication, and keeping your home clean and secure. <b>Both your dog and your home will be safe and well cared for</b>.</p>
       <br />
       <p><b>Full Day Dog Sitting provides 24-hour, personalized care in the comfort of your home</b>. This includes an overnight stay, <b>two neighborhood walks</b>, and <b>enriching daily outings</b> to the dog park, beach, or hiking trail. I handle every detail - custom meal preparation, medication administration, <b>and maintaining a spotless, secure home throughout the stay</b>.</p>
       <br />
       <div className="pricing">
-        Half Day (12 hrs) Evening - Morning: <b>$50</b>
+        Half Day (12 hrs) PM - AM: <b>$50</b>
         <br />
         Full Day (24 hrs): <b>$100</b>
         <br />
